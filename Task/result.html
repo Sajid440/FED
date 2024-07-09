@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="text-center">
+        <h2>RESULT</h2>
+        <BR>
+        <fieldset>
+            <table border="0" align="center">
+                <form onsubmit="return result()">
+                    <tr>
+                        <td>
+                            <label for="">ENGLISH:</label>
+                        </td>
+                        <td><input type="text" required min="0" class="form-control" max="100" id="english"
+                                placeholder="Enter your mark"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">HINDI:</label></td>
+                        <td><input type="text" required min="0" class="form-control" max="100" id="hindi"
+                                placeholder="Enter your mark"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">GUJRATI:</label></td>
+                        <td><input type="text" required min="0" class="form-control" max="100" id="gujarati"
+                                placeholder="Enter your mark"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">MATHES:</label></td>
+                        <td><input type="text" required min="0" class="form-control" max="100" id="maths"
+                                placeholder="Enter your mark"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">SCIENCE:</label></td>
+                        <td><input type="text" required min="0" class="form-control" max="100" id="scienc"
+                                placeholder="Enter your mark"></td>
+                    </tr>
+                    <tr>
+                        <TD></TD>
+                        <td><button class="btn btn-primary">RESULT</button></td>
+                    </tr>
+
+                </form>
+
+            </table>
+            <h1 id="total"></h1>
+            <h1 id="per"></h1>
+            <h1 id="grade"></h1>
+            <h1 id="suc"></h1>
+        </fieldset>
+    </div>
+
+    <script>
+        function result() {
+            var english = document.getElementById('english').value;
+            var hindi = document.getElementById('hindi').value;
+            var gujarati = document.getElementById('gujarati').value;
+            var maths = document.getElementById('maths').value;
+            var scienc = document.getElementById('scienc').value
+            var total;
+
+            var total = +english + +hindi + +gujarati + +maths + +scienc;
+            document.getElementById('total').innerHTML = "total mark =" + total;
+
+            var per;
+            per = (total / 500) * 100;
+            document.getElementById('per').innerHTML = "per=" + per + " %";
+
+            if (per >= 90) {
+                document.getElementById('grade').innerHTML = "grade : A"
+                document.getElementById('grade').style = "color : green"
+                document.getElementById('suc').innerHTML = "congratulation you have pass this exam"
+                document.getElementById('suc').style = "color : green"
+            }
+            else if (per >= 70) {
+                document.getElementById('grade').innerHTML = "grade : B"
+                document.getElementById('grade','suc').style = "color : green"
+                document.getElementById('suc').innerHTML = "congratulation you have pass this exam"
+                document.getElementById('suc').style = "color : green"
+            }
+            else if (per >= 50) {
+                document.getElementById('grade').innerHTML = "grade : C"
+                document.getElementById('grade').style = "color : green"
+                document.getElementById('suc').innerHTML = "congratulation you have pass this exam"
+                document.getElementById('suc').style = "color : green"
+            }
+            else if (per >= 40) {
+                document.getElementById('grade').innerHTML = "grade : D"
+                document.getElementById('grade').style = "color : green"
+                document.getElementById('suc').innerHTML = "congratulation you have pass this exam"
+                document.getElementById('suc').style = "color : green"
+            }
+            else {
+                document.getElementById('grade').innerHTML = "fail"
+                document.getElementById('grade').style = "color : red"
+                document.getElementById('suc').innerHTML = "butter luck next time"
+                document.getElementById('suc').style = "color : red"
+            }
+
+            return false;
+
+
+        }
+    </script>
+</body>
+
+</html>

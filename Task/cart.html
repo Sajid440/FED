@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="submit" value="+" onclick="plus()">
+    <span id="test">1</span>
+    <input type="submit" value="-" onclick="mins()">
+     <script>
+        function plus() {
+            var a = document.getElementById('test').innerHTML;
+            a++;
+            document.getElementById('test').innerHTML = a;
+        }
+        function mins() {
+            var a = document.getElementById('test').innerHTML;
+            a--;
+            if(a>=0){
+                document.getElementById('test').innerHTML = a;
+            }
+      
+        }
+
+    </script>
+    <br>
+    <br>
+
+
+    <input type="submit" value="+" onclick="plus1()">
+    <input type="text" id="demo" value="0" min="0">
+    <input type="submit" value="-" onclick="mins1()">
+    <script>
+        function plus1(){
+            var a = document.getElementById('demo').value;
+            a++;
+            document.getElementById('demo').value = a;
+        }
+        function mins1(){
+            var a =document.getElementById('demo').value;
+            a--;
+            if(a>=0){
+                document.getElementById('demo').value = a;
+            }
+        }
+    </script>
+</body>
+
+</html>
